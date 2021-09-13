@@ -1,8 +1,26 @@
-dict_alpha = {"A":2, "B":1, "C":3, "D":7,"E":7, "F":0, "G":6, "H":4, "I":3, "J":5, "K":7, "L":5, "M":0, "N":9, "O":1, "P":6, "Q":1, "R":4, "S":6, "T":6, "U":8, "V":5, "W":4, "X":2, "Y":8, "Z":2}
+import random
+
+x = random.randint(0,9)
+dict_alpha = ["A", random.randint(0,9), "B", random.randint(0,9), "C", random.randint(0,9), "D", random.randint(0,9), "E", random.randint(0,9), "F", random.randint(0,9), "G", random.randint(0,9), "H", random.randint(0,9), "I", random.randint(0,9), "J", random.randint(0,9), "K", random.randint(0,9), "L", random.randint(0,9), "M", random.randint(0,9), "N",
+              random.randint(0,9), "O", random.randint(0,9), "P", random.randint(0,9), "Q", random.randint(0,9), "R", random.randint(0,9), "S", random.randint(0,9), "T", random.randint(0,9), "U", random.randint(0,9), "V", random.randint(0,9), "W", random.randint(0,9), "X", random.randint(0,9), "Y", random.randint(0,9), "Z", random.randint(0,9)]
 
 password = input("Input a password: ").upper()
-number_pass = ""
+number_pass = []
 for letter in password:
-    number_pass += str(dict_alpha.get(letter))
+    for i in range(0, len(dict_alpha)):
+        if letter == dict_alpha[i]:
+            number_pass.append(dict_alpha[i+1])
 
 print(number_pass)
+
+for number in number_pass:
+ lista = []
+ for i in range(0, len(dict_alpha)):
+  if number == dict_alpha[i]:
+      lista.append(dict_alpha[i-1])
+
+ print(lista)
+
+
+print(f"Random values are: \n "
+       f"{dict_alpha}")
